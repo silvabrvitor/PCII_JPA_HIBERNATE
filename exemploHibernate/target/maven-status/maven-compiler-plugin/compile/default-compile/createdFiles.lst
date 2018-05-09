@@ -1,0 +1,5 @@
+br\com\eteczonaleste\persistence\ClienteHibernateDAO.class
+br\com\eteczonaleste\persistence\HibernateUtil.class
+br\com\eteczonaleste\App.class
+br\com\eteczonaleste\persistence\IDAO.class
+br\com\eteczonaleste\model\Cliente.class

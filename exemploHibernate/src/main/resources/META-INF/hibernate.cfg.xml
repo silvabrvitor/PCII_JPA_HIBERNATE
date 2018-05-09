@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate
+Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+<!-- Database connection settings -->
+ <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+ <property name="connection.url">jdbc:mysql://localhost/lojainfo?serverTimezone=UTC</property>
+ <property name="connection.username">root</property>
+ <property name="connection.password">admin123</property>
+<!--
+ JDBC connection pool (use the built-in)
+ commented out this property to fix
+ Caused by: org.hibernate.HibernateException: The internal connection pool has reached its maximum size and no connection is currently available!
+ <property name="connection.pool_size">1</property>
+-->
+<!-- SQL dialect -->
+ <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+<!-- Enable Hibernate's automatic session context management -->
+ <property name="current_session_context_class">thread</property>
+<!-- Conn Pool -->
+ <property name="hibernate.c3p0.min_size">10</property>
+ <property name="hibernate.c3p0.max_size">20</property>
+ <property name="hibernate.c3p0.timeout">1800</property>
+ <property name="hibernate.c3p0.max_statements">50</property>
+<!-- Disable the second-level cache -->
+ <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+<!-- Echo all executed SQL to stdout -->
+ <property name="show_sql">true</property>
+<!-- Database DDL behavior-->
+ <property name="hibernate.hbm2ddl.auto">update</property>
+<!--
+ <property name="hibernate.hbm2ddl.auto">create-drop</property>
+-->
+ <mapping class="br.edu.etec.lojainformatica.model.Cliente" />
+ <mapping class="br.edu.etec.lojainformatica.model.Hardware" />
+ <mapping class="br.edu.etec.lojainformatica.model.Vendas" />
+ </session-factory>
+</hibernate-configuration>
