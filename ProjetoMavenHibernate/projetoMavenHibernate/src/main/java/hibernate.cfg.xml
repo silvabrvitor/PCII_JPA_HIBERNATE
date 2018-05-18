@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<!-- Configurações do banco de dados -->
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost/aula?useTimezone=true&amp;serverTimezone=UTC</property>
+<property name="connection.username">root</property>
+<property name="connection.password"></property>
+
+<!-- Pool de conexões JDBC (use the built-in) -->
+<property name="connection.pool_size">100</property>
+
+<!-- Dialeto de SQL -->
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+<!-- Abilita o gerenciamento aoutmático dos contextos de sessões do Hibernate -->
+<property name="current_session_context_class">thread</property>
+
+<!-- Mostra as SQL feitas pelo Hibernate no Console -->
+<property name="show_sql">true</property>
+
+<!-- Apaga e recria o banco ao iniciar a aplicação -->
+<property name="hbm2ddl.auto">update</property>
+
+</session-factory>
+</hibernate-configuration>
